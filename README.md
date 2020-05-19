@@ -34,36 +34,38 @@ git clone https://github.com/xyou365/AutoRclone && cd AutoRclone && pip3 install
 
 **开启Drive Api后分三种情况**
 
-## 1.如果你之前没创建过项目, 直接运行
+### 1.如果你之前没创建过项目, 直接运行
 
 ```bash
 python3 gen_sa_accounts.py --quick-setup 5
 ```
-- 以上命令含义：
- - 创建6个项目（项目0到项目5）
- - 开启相关的服务
- - 创建600个service accounts（6个项目，每个项目100个）
- - 将600个service accounts的授权文件下载到accounts文件夹下面
++ 以上命令含义：
+    + 创建6个项目（项目0到项目5）
+    + 开启相关的服务
+    + 创建600个service accounts（6个项目，每个项目100个）
+    + 将600个service accounts的授权文件下载到accounts文件夹下面
 
-## 2.如果你已经有N个项目，现需要创建新的项目并在新的项目中创建service accounts，直接运行
+### 2.如果你已经有N个项目，现需要创建新的项目并在新的项目中创建service accounts，直接运行
 
 ```bash
 python3 gen_sa_accounts.py --quick-setup 2 --new-only
 ```
-- 以上命令含义：
- - 额外创建2个项目（项目N+1到项目N+2）
- - 开启相关的服务
- - 创建200个service accounts（2个项目，每个项目100个）
- - 将200个service accounts的授权文件下载到accounts文件夹下面
++ 以上命令含义：
+    + 额外创建2个项目（项目N+1到项目N+2）
+    + 开启相关的服务
+    + 创建200个service accounts（2个项目，每个项目100个）
+    + 将200个service accounts的授权文件下载到accounts文件夹下面
 
-## 3.如果你想用已有的项目来创建service accounts（不创建新的项目），直接运行
+### 3.如果你想用已有的项目来创建service accounts（不创建新的项目），直接运行
 
 ```bash
 python3 gen_sa_accounts.py --quick-setup -1
 ```
 
-注意这会覆盖掉已有的service accounts
+注意这会覆盖掉已有的`service accounts`
+
 顺利完成后，AutoRclone文件下面的accounts文件夹下会有很多的json文件。
+
 
 # 三、将service accounts加入Google Groups
 
